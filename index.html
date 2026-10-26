@@ -3,21 +3,85 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Modal</title>
-  <link href="styles.css" rel="stylesheet">
-  <script defer src="script.js"></script>
+  <title>Form & Flow</title>
+  <link rel="stylesheet" href="styles.css">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Faustina:ital,wght@0,300..800;1,300..800&family=Fira+Sans:ital,wght@0,100..900&family=Neuton:ital,wght@0,200..800&family=Roboto+Condensed:ital,wght@0,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Faustina:ital,wght@0,300..800;1,300..800&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Neuton:ital,wght@0,200;0,300;0,400;0,700;0,800;1,400&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+  <script src="script.js" defer></script>
 </head>
 <body>
-  <button data-modal-target="#modal">Open Modal</button>
-  <div class="modal" id="modal">
-    <div class="modal-header">
-      <div class="title">Example Modal</div>
-      <button data-close-button class="close-button">&times;</button>
+  <header class="site-header">
+    <div class="header-top">
+      <div class="logo-container">
+        <a href="/">
+          <img src="images/Form&Flow.png" alt="Form & Flow" class="site-logo">
+        </a>
+      </div>
     </div>
-    <div class="modal-body">
-      Soluta commodi voluptatem architecto perferendis tempora placeat in quo quia cupiditate esse consequuntur assumenda totam esse. Eligendi alias quidem fugiat tenetur quia aut consequatur tempore fugiat ex. At debitis iste sunt voluptatem et. Ipsa consequatur molestias voluptates. Ex consequatur praesentium eum vel ex ipsa sint. Et consequatur sequi facere praesentium magnam nostrum cum ut molestiae culpa voluptatibus ducimus.    </div>
-  </div>
-  <div id="overlay"></div>
+  
+    <div class="header-bottom">
+      <nav class="main-nav">
+        <ul class="nav-links">
+          <li><a href="#commercial">Commercial</a></li>
+          <li><a href="#accessories">Accessories</a></li>
+          <li><a href="#equipment">Equipment</a></li>
+          <li><a href="#learn">Learn</a></li>
+        </ul>
+      </nav>
+  
+      <div class="header-actions">
+        <a href="#search" aria-label="Search">
+          <img src="images/SearchVector.png" alt="Search" class="icon">
+        </a>
+        <a href="#account" aria-label="User Account">
+          <img src="images/ProfileVector.png" alt="User Account" class="icon">
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero-section">
+      <div class="hero-image-wrapper">
+        <img 
+          id="heroImage" src="images/HeroImageA.png" alt="Pour over coffee being brewed with a V60 dripper" 
+          class="hero-image visible">
+      </div>
+    </section>
+
+    <section class="tagline-section">
+      <div class="container">
+        <h2>BRIGHTEN YOUR BREW</h2>
+        <p>EXTRACT THE PERFECT CUP, ACHIEVING<br> THE CLARITY YOUR COFFEE DESERVES.</p>
+      </div>
+    </section>
+  </main>
+      <div id="salePopup" class="popup-overlay" role="dialog" aria-modal="true" aria-labelledby="popupTitle">
+        <div class="popup-container">
+          
+          <div class="popup-left">
+            <div class="popup-image-frame">
+              <img src="images/PopupImage.png" alt="Pour over coffee brewing" class="popup-image">
+            </div>
+          </div>
+
+          <div class="popup-right">
+            <button id="closePopup" class="popup-close-btn" aria-label="Close popup">&times;</button>
+            
+            <div class="popup-content">
+              <h2 id="popupTitle" class="popup-title">Get 20% Off</h2>
+              <p class="popup-subtitle">WHEN YOU PLACE YOUR FIRST ORDER.</p>
+              <a href="#shop" class="popup-cta">SHOP NOW</a>
+              <p class="popup-disclaimer">*ORDER AUTOMATICALLY APPLIED IN CART*</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
 </body>
 </html>
