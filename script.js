@@ -3,6 +3,7 @@ const closeModalButtons = document.querySelectorAll('[data-close-button]')
 const overlay = document.getElementById('overlay')
 
 //Partially bootstrapped section below//
+
 document.addEventListener('DOMContentLoaded', () => {
   const images = [
     'images/HeroImageA.png',
@@ -73,4 +74,23 @@ document.addEventListener('DOMContentLoaded', () => {
       closePopup();
     }
   });
+});
+
+//Liquid Fill Section//
+
+document.addEventListener('DOMContentLoaded', () => {
+  const container = document.querySelector('.tagline-section .container');
+
+  if (!container) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        container.classList.add('is-filled');
+        observer.unobserve(container);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  observer.observe(container);
 });
